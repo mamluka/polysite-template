@@ -1,7 +1,7 @@
 {% if page.image.feature %}
-<header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('img/{{ page.image.feature }}')" itemscope itemtype="http://schema.org/Organization">
+<header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('{{site.url}}/img/{{ page.image.feature }}')" itemscope itemtype="http://schema.org/Organization">
   {% else %}
-  <header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url(img/{{ site.default_bg }})" itemscope itemtype="http://schema.org/Organization">
+  <header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('{{site.url}}img/{{ site.default_bg }}')" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
     {% if page.headline %}
     <div class="header-inner">

@@ -1,7 +1,7 @@
 {% if page.image.feature %}
-<footer id="footer" class="text-center" style="background-image: url({{ site.url }}/img/{{ page.image.feature }})">
+<footer id="footer" class="text-center" style="background-image: url('{{ site.url }}/img/{{ page.image.feature }}')">
   {% else %}
-  <footer id="footer" class="text-center" style="background-image: url({{ site.url }}/img/{{ site.default_bg }})">
+  <footer id="footer" class="text-center" style="background-image: url('{{ site.url }}/img/{{ site.default_bg }}')">
     {% endif %}
     <div class="container">
       <ul class="social-icons">
