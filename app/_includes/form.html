@@ -1,21 +1,36 @@
 <form>
   <div class="controls">
-    <input class="form-control input-lg" type="text" placeholder="Name">
-    <input class="form-control input-lg" type="text" placeholder="Zip">
+    <div class="row">
+      <div class="col-md-6">
+        <input class="form-control input-lg" type="text" placeholder="Name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <input class="form-control input-lg" type="text" placeholder="Zip">
+      </div>
+    </div>
 
-    <select class="form-control" title="Select Student Loan Debt Amount">
-      <option value="">Select Student Loan Debt Amount</option>
-      <option value="7500">Below $10,000</option>
-      <option value="15000">$10,000 - $19,000</option>
-      <option value="25000">$20,000 - $29,000</option>
-      <option value="35000" selected="">$30,000 - $39,000</option>
-      <option value="45000">$40,000 - $49,000</option>
-      <option value="55000">$50,000 - $59,000</option>
-      <option value="65000">$60,000 - $69,000</option>
-      <option value="75000">$70,000 - $79,000</option>
-      <option value="85000">$80,000 - $89,000</option>
-      <option value="95000">$90,000 - $99,000</option>
-      <option value="100000">Over $100,000</option>
-    </select>
+    <div class="row">
+      <div class="col-md-5">
+        <select class="form-control" title="Select Student Loan Debt Amount">
+          <option value="">Select Student Loan Debt Amount</option>
+          <option value="7500">Below $10,000</option>
+          <option value="15000">$10,000 - $19,000</option>
+          <option value="25000">$20,000 - $29,000</option>
+          <option value="35000" selected="">$30,000 - $39,000</option>
+          <option value="45000">$40,000 - $49,000</option>
+          <option value="55000">$50,000 - $59,000</option>
+          <option value="65000">$60,000 - $69,000</option>
+          <option value="75000">$70,000 - $79,000</option>
+          <option value="85000">$80,000 - $89,000</option>
+          <option value="95000">$90,000 - $99,000</option>
+          <option value="100000">Over $100,000</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg">Get relief</button>
+    <button type="button" class="btn btn-success btn-lg">Call to click</button>
   </div>
 </form>

@@ -336,6 +336,9 @@ hr {
   .small-screen-margin-bottom {
     margin-bottom: 24px !important;
   }
+  .menu-items {
+    font-size: 2em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -835,6 +838,6 @@ h6.lighter {
   font-weight: 100 !important;
 }
 
-form input.form-control, form select.form-control {
+form input.form-control, form select.form-control, form button{
   margin-top: 10px;
 }
