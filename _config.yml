@@ -4,7 +4,7 @@ disqus_shortname: hmfaysal
 default_bg:       1.jpg
 search:			  false
 #Change url to your domain. Leave localhost:4000 server or blank when working locally.
-url:              http://localhost:9000
+url:
 
 # Owner/author information
 owner:
