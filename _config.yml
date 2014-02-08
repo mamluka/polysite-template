@@ -1,37 +1,70 @@
-# Jekyll configuration precedence:
-# 1. Gruntfile task
-# 2. config.build.yml
-# 3. config.yml
+title:            Relief your loan
+#logo:
+disqus_shortname: hmfaysal
+default_bg:       1.jpg
+search:			  false
+#Change url to your domain. Leave localhost:4000 server or blank when working locally.
+url:              http://localhost:9000
 
-name: education-debt-relief-test-1
-description: 
-author:
-  name: David
-  email: david.mazvovsky@gmail.com
+# Owner/author information
+owner:
+  name:           The student relief company
+  avatar:         avatar.jpg
+  email:          sales@relief.com
+  description:    We provide student relief programs...
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        strelief
+  facebook:       strelief
+  github:
+  stackexchange:
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  hmfaysalsocial:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
 
-# Grunt handles images and assets.
-exclude: ['img', 'css', 'js', 'fonts',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
 
-include: ['.htaccess']
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+    external: false
+    icon: home
+  - title: About
+    url: /about
 
-# _config.build.yml sets future and show_drafts to false on `grunt build`
-future: true
-show_drafts: true
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+pygments:    true
+markdown:    kramdown
+paginate:    4
+paginate_path: "page:num"
 
-# Markdown library
-markdown: kramdown
-#   auto_ids: true
-#   footnote_nr: 1
-#   entity_output: as_char
-#   toc_levels: 1..6
-#   use_coderay: false
-#   coderay:
-#     coderay_wrap: div
-#     coderay_line_numbers: inline
-#     coderay_line_numbers_start: 1
-#     coderay_tab_width: 4
-#     coderay_bold_every: 10
-#     coderay_css: style
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title
 
-pygments: true
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

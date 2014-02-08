@@ -1,1 +1,6 @@
+$font-size-base: 18px;
+$icon-font-path: "../_bower_components/bootstrap-sass/fonts";
 @import "../_bower_components/bootstrap-sass/lib/bootstrap";
+
+$fa-font-path: '/_bower_components/font-awesome/fonts';
+@import "../_bower_components/font-awesome/scss/font-awesome";
