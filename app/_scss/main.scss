@@ -428,6 +428,7 @@ a:hover {
 .header-white .blog-description {
   color: white;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header-white .blog-description:after {
@@ -481,10 +482,10 @@ html {
   padding: 24px 0;
   background-repeat: no-repeat;
   background-position: top center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
   background-attachment: fixed;
   margin-bottom: 72px;
 }
