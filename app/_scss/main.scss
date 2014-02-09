@@ -852,8 +852,11 @@ h6.lighter {
 
 #main {
   .has-feedback {
-    span.validation-icon.form-control-feedback {
+    span.input-validation-icon.form-control-feedback {
       top: 8px;
+    }
+    span.select-validation-icon.form-control-feedback {
+      top: 0px;
     }
   }
 }
