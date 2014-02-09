@@ -839,12 +839,21 @@ h6.lighter {
   font-weight: 100 !important;
 }
 
-form input.form-control, form select.form-control, form button{
-  margin-top: 10px;
-}
+//form input.form-control, form select.form-control, form button {
+//  margin-top: 10px;
+//}
+
 .disclaimer {
-  color:white;
+  color: white;
   h3 {
     color: white;
+  }
+}
+
+#main {
+  .has-feedback {
+    span.validation-icon.form-control-feedback {
+      top: 8px;
+    }
   }
 }
