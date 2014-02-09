@@ -338,6 +338,9 @@ hr {
   .menu-items {
     font-size: 2em;
   }
+  .hyper {
+    font-size:52px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -352,9 +355,6 @@ hr {
 }
 
 @media (max-width: 320px) {
-  body {
-    font-size: 14px;
-  }
   h1 {
     font-size: 21px;
     line-height: 24px;
@@ -381,7 +381,7 @@ hr {
     line-height: 1;
   }
   .hyper {
-    font-size: 36px;
+    font-size: 35px;
   }
 }
 
