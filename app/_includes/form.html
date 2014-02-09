@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
-            <input class="form-control input-lg" type="text" placeholder="Phone" ng-model="phone" required ng-pattern="/^\d{5}$/" name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
+            <input class="form-control input-lg" type="text" placeholder="Phone" ng-model="phone" required name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.phone.$pristine" ng-class="{'fa-check': lead.phone.$valid, 'fa-minus': lead.phone.$invalid && !lead.phone.$pristine }"></span>
           </div>
         </div>
