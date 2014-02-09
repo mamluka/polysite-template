@@ -4,6 +4,7 @@ type: status
 title: Shackled by student debt?
 image:
   feature: 1.jpg
+  feature_small: 1_small.jpg
 comments: true
 mathjax:
 ---

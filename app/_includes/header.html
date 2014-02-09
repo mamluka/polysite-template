@@ -1,5 +1,26 @@
 {% if page.image.feature %}
-<header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('{{site.url}}/img/{{ page.image.feature }}')" itemscope itemtype="http://schema.org/Organization">
+<style>
+
+  .blog-header.header-white {
+    background-image: url('{{site.url}}/img/{{ page.image.feature }}');
+    height: 60%;
+  }
+
+  @media (max-width: 640px) {
+    .blog-header.header-white {
+      background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
+      height: 50%;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .blog-header.header-white {
+      background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
+      height: 25%;
+    }
+  }
+</style>
+<header class="blog-header header-white header-overlay align-center align-middle" itemscope itemtype="http://schema.org/Organization">
   {% else %}
   <header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('{{site.url}}img/{{ site.default_bg }}')" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
