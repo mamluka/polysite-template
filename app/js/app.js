@@ -11,6 +11,5 @@ angular.module('landingPage',[])
 angular.module('landingPage')
     .controller('FormCtrl', function ($scope) {
         $scope.submit = function () {
-            alert('david');
         }
     });

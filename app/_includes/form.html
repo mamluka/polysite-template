@@ -2,7 +2,7 @@
   <form style="margin-bottom: 20px;" role="form" name="lead">
     <div class="controls">
       <div class="row">
-        <div class="col-md-7 ">{{lead.name.$invalid}}
+        <div class="col-md-7 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.name.$valid,'has-error': lead.name.$invalid && !lead.name.$pristine}">
             <input class="form-control input-lg" type="text" placeholder="Name" ng-model="name" required name="name">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.name.$pristine" ng-class="{'fa-check': lead.name.$valid, 'fa-minus': lead.name.$invalid && !lead.name.$pristine }"></span>
