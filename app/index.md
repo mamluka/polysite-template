@@ -14,7 +14,7 @@ mathjax:
 
 {% include calls.html %}
 
-## Leave details, we will call you!
+## Let experts contact you.
 
 {% include form.html %}
 
