@@ -1,7 +1,7 @@
 ---
 layout: default
 type: status
-title: Loan Consolidation
+title: FAQ
 image:
   feature: 1.jpg
   feature_small: 1_small.jpg
@@ -9,36 +9,31 @@ comments: true
 mathjax:
 ---
 
-## Direct Loan Consolidation
-Consolidation loans combine one or more federal student loans into one new loan held by a single lender. Since July 1, 2010, the only available lender for federal consolidation loans is then U.S. Department of Education. 
-If you are having trouble keeping track of multiple student loan payments, consolidation could help. It can also be useful if you need to extend your repayment, want to qualify for Public Service Loan Forgiveness, or have run out of forbearance time. 
+## What does it mean to default on a student loan?
+For federally guaranteed student loans under Title IV of the Higher Education, a default occurs when you fail to make payments on your loan for (a) 180 days if you repay in monthly installments or (b) 240 days if the payments are due less frequently. During the time that you are behind in your payments, your lender must exercise “due diligence” (make repeated efforts to find you and contact you about repayment) in attempting to collect the loan from you. If the lender is unsuccessful, it will usually place the loan in “default” and turn it over to the “guaranty agency” in your state. Lenders may “accelerate” a defaulted loan, which means that the entire balance becomes due in a single payment.
 
-## How It Works
-* You must have at least one eligible federal student loan to consolidate.
-* You cannot consolidate private and federal loans together.
-* The U.S. Department of Education (ED) does not require a minimum balance to consolidate your loans.
-* Your new loan will have new terms.
-* Your loan will have a new interest rate, which will be the weighted average of the loans you consolidated rounded up to the nearest 1/8th of a percent (for an example, see below). 
-* After you consolidate, your repayment schedule will be reset to standard repayment. You may then choose a different payment schedule.
-* Based on your total education loan debt (including private loans), you could extend your repayment to a maximum of 30 years.
-* Loan consolidation cannot be reversed.
-* Consolidation loans can be re-consolidated to add additional eligible education loans.
-* There are no penalties for prepayment or finishing repayment ahead of schedule.
+## What are the consequences of defaulting?
+Borrowers who fail to make a payment on time are considered delinquent on their Direct Consolidation Loans. Borrowers who do not make payments for 270 days are in default. Defaulting has severe and long-lasting consequences, as follows:
+* The Department of Education can immediately demand repayment of the total loan amount due.
+* The Department of Education will attempt to collect the debt and may charge collection costs.
+* The Department of Education reports defaulted loans to national credit bureaus, damaging borrowers’ credit ratings and, making it difficult for borrowers to make purchases such as cars or homes.
+* Borrowers with loans in default are ineligible for Title IV student aid.
+* Borrowers with loans in default are ineligible for deferments
+* The Internal Revenue Service can withhold borrowers’ Federal income tax refunds.
+* Borrowers’ wages may be garnished.
 
-## Eligible Loans:  
+It is important that borrowers with Direct Consolidation Loans stay in touch with the Direct Loan Servicing Center. Default can occur when borrowers fail to keep the Direct Loan Servicing Center up to date on address and name changes, causing billing statements to go astray. In addition, the Direct Loan Servicing Center can offer alternatives when borrowers have trouble making monthly payments. Borrowers may apply for a deferment or forbearance, or change repayment plans.
 
-Subsidized Federal Stafford Loans, Direct Subsidized Loans, Subsidized Federal Consolidation Loans, Direct Subsidized Consolidation Loans, Federal Insured Student Loans, Guaranteed Student Loans, Unsubsidized Federal Consolidation Loans, Direct Unsubsidized Consolidation Loans, Federal Plus Loans, Direct Plus Consolidation Loans, Federal Perkins Loans, National Direct Student Loans, National Defense Student Loans, Federal Supplemental Loans for Students, Parent Loans for Undergraduate Students, Auxiliary Loans to Assist Students, Health Professional Student Loans, Health Education Assistance Loans, Nursing Student Loans, Loans for Disadvantaged Students
+## How can I escape default?
+There are generally three things to do to avoid or escape defaulting on a student loan when you are unable to pay. They are:
+1. Cancel or discharge (end your obligation to repay) the loan,
+2. Renew or consolidate the loan into a new loan, or
+3. Temporarily stop making payments.
 
-## Ineligible Loans: 
+## I can’t afford my loan payment. What are my options?
 
-Loans made by the state and not guaranteed by the Federal Government. Loans made by private companies and not guaranteed by the Federal Government. Primary Care Loans. Law Access Loans Medical  Assist Loans. PLATO Loans.
+There are other repayment options that might better suit you, such as an Income-Based, Graduated, or Extended repayment options.  Give us a call and we can take a look at your options.
 
-## Interest Rate:
+## How long does it take to get out of default?
 
-The interest rate on a consolidation loan is determined by taking the weighted average of your current loans’ interest rates and rounding up to the nearest 1/8th of a percent. 
-
-## Repayment Plans:
-* Standard:  Make fixed monthly payments to pay loan off in 10 to 30 years.  The minimum payment under this plan is $50.
-* Graduated:  Payments will begin at a lower amount and will gradually increase every two years.  Loan term is 10 to 30 years.
-* Income Contingent:  Monthly payments are based upon your adjusted gross family income, family size, 	  and loan balance.  This payment is subject to change upon annual review of financial situation.  Any amount still outstanding after 25 years is forgiven.
-* Income Based:  Monthly payments are based upon your adjusted gross family  income and family size.       	 This payment is subject to change upon annual review of financial situation.  Any amount still outstanding after 25 years is forgiven.
+On average it only takes 4-8 weeks to remove your loans out of a default status.
