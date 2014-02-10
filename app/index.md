@@ -9,7 +9,7 @@ comments: true
 mathjax:
 ---
 
-# Lower your payment by up to 70% or more.
+<small>Lower your payment by up to 70% or more.</small>
 
 
 {% include calls.html %}
