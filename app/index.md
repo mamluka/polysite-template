@@ -8,16 +8,13 @@ image:
 comments: true
 mathjax:
 ---
-
-<small>Lower your payment by up to 70% or more.</small>
-
+<blockquote>
+  <p>Lower your payment by up to <strong>70%</strong> or more.</p>
+</blockquote>
 
 {% include calls.html %}
 
-
-
-
-# contact you later?
+## Leave details, we will call you!
 
 {% include form.html %}
 
