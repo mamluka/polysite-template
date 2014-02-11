@@ -69,7 +69,7 @@
     header[0].style.height = headerHeight + 'px';
 
     setTimeout(function () {
-      if (window.scrollY < headerHeight * 0.25) {
+      if (window.scrollY < headerHeight * 0.25 || screenWidth > 640) {
         var moveLocation = 0;
         var interval = setInterval(function () {
           if (window.scrollY < moveLocation) {
