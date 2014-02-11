@@ -32,7 +32,7 @@
           <img itemprop="logo" src="{{ site.url }}/img/{{ site.logo }}" alt="{{ site.title }} Logo">
           {% endif %}
           <!--<h1 class="blog-title light visible-xs" itemprop="name">-->
-            <!--{{ site.title }}-->
+          <!--{{ site.title }}-->
           <!--</h1>-->
         </a>
 
@@ -50,10 +50,15 @@
           {% endif %}
 
           <!--<h2 class="blog-title light visible-xs" itemprop="name">-->
-            <!--{{ site.title }}-->
+          <!--{{ site.title }}-->
           <!--</h2>-->
         </a>
       </div>
     </div>
     {% endif %}
   </header>
+
+  <script>
+    var header = document.getElementsByClassName('blog-header');
+    header[0].style.height = document.documentElement.clientWidth / 2.4 + 'px'
+  </script>
