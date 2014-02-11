@@ -3,20 +3,17 @@
 
   .blog-header.header-white {
     background-image: url('{{site.url}}/img/{{ page.image.feature }}');
-    height: 60%;
   }
 
   @media (max-width: 640px) {
     .blog-header.header-white {
       background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
-      height: 50%;
     }
   }
 
   @media (max-width: 330px) {
     .blog-header.header-white {
       background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
-      height: 50%;
     }
   }
 </style>
@@ -59,11 +56,30 @@
   </header>
 
   <script>
-    var header = document.getElementsByClassName('blog-header');
-    var screenWidth = screen.width;
 
+    var header = document.getElementsByClassName('blog-header');
+    var screenWidth = document.documentElement.clientWidth;
+
+    var headerHeight = 0;
     if (screenWidth > 640)
-      header[0].style.height = screenWidth / 2.4 + 'px';
+      headerHeight = screenWidth / 2.4
     else
-      header[0].style.height = screenWidth / 1.28 + 'px';
+      headerHeight = screenWidth / 1.28
+
+    header[0].style.height = headerHeight + 'px';
+
+    setTimeout(function () {
+      if (window.scrollY < headerHeight * 0.25) {
+        var moveLocation = 0;
+        var interval = setInterval(function () {
+          if (moveLocation > 0.75 * headerHeight) {
+            clearInterval(interval);
+            return;
+          }
+
+          moveLocation += 10;
+          window.scrollTo(0, moveLocation);
+        }, 10)
+      }
+    }, 1000);
   </script>
