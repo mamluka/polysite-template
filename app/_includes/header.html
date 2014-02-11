@@ -72,6 +72,10 @@
       if (window.scrollY < headerHeight * 0.25) {
         var moveLocation = 0;
         var interval = setInterval(function () {
+          if (window.scrollY < moveLocation) {
+            clearInterval(interval);
+            return;
+          }
           if (moveLocation > 0.75 * headerHeight) {
             clearInterval(interval);
             return;
@@ -81,5 +85,5 @@
           window.scrollTo(0, moveLocation);
         }, 10)
       }
-    }, 1000);
+    }, 1500);
   </script>
