@@ -60,5 +60,10 @@
 
   <script>
     var header = document.getElementsByClassName('blog-header');
-    header[0].style.height = document.documentElement.clientWidth / 2.4 + 'px'
+    var screenWidth = screen.width;
+
+    if (screenWidth > 640)
+      header[0].style.height = / 2.4 + 'px';
+    else
+      header[0].style.height = / 1.28+ 'px';
   </script>
