@@ -645,7 +645,7 @@ html {
 
 @media (min-width: 992px) {
   .post-title {
-    margin-bottom: 72px;
+    margin-bottom: 30px;
   }
   .post-info {
     margin-bottom: 0;
@@ -876,4 +876,8 @@ h6.lighter {
 }
 .lead-collection {
   background-color: rgba(235, 235, 235, 0.3);
+  border-bottom: 3px solid rgba(128, 128, 128, 0.18);
+}
+.form-col {
+  border-left: 13px solid rgba(42, 94, 42, 0.08);
 }
