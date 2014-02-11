@@ -8,16 +8,8 @@ image:
 comments: true
 mathjax:
 ---
-<blockquote>
-  <p>Lower your payment by up to <strong>70%</strong> or more.</p>
-</blockquote>
 
-{% include calls.html %}
-
-## Let experts contact you.
-
-{% include form.html %}
-
+{% include lead-collection.html %}
 
 
 ## Solve Your Student Loan Issues Now!
