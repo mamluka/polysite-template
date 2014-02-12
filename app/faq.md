@@ -1,3 +1,14 @@
+---
+layout: default
+type: status
+title: Loan Consolidation
+image:
+  feature: 1.jpg
+  feature_small: 1_small.jpg
+comments: true
+mathjax:
+---
+
 ## Direct Loan Consolidation
 Consolidation loans combine one or more federal student loans into one new loan held by a single lender. Since July 1, 2010, the only available lender for federal consolidation loans is then U.S. Department of Education. 
 If you are having trouble keeping track of multiple student loan payments, consolidation could help. It can also be useful if you need to extend your repayment, want to qualify for Public Service Loan Forgiveness, or have run out of forbearance time. 
