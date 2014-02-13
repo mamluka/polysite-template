@@ -9,8 +9,9 @@ angular.module('landingPage', [])
     });
 
 angular.module('landingPage')
-    .controller('FormCtrl', function ($scope) {
+    .controller('FormCtrl', function ($scope, $http) {
         $scope.submit = function () {
+            $http.post()
         }
     })
     .controller('ClickToCallCtrl', function ($scope) {
