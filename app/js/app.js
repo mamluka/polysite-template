@@ -114,7 +114,7 @@ angular.module('landingPage')
                 mixpanel.track('Invalid submission');
 
                 validate();
-                if (angular.element(document.getElementsByTagName('html')[0]).hasClass('touch'))
+                if (!angular.element(document.getElementsByTagName('html')[0]).hasClass('touch'))
                     showValidationMessage();
                 return;
             }
