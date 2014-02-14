@@ -26,10 +26,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-8">
           <div class="has-feedback form-group">
             <select mixpanel-select class="form-control" required name="loanType" ng-class="{'has-success': lead.loanType.$valid,'has-error': lead.loanType.$invalid && !lead.loanType.$pristine}" ng-model="loanType">
-              <option value="" selected>Type of Student Loans</option>
+              <option value="" selected>Select Type of Student Loans</option>
               <option value="Federal">Federal</option>
               <option value="Private">Private</option>
               <option value="Both">Both</option>
@@ -40,10 +40,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-8">
           <div class="has-feedback form-group">
             <select mixpanel-select class="form-control" ng-model="loanAmount" required name="loanAmount" ng-class="{'has-success': lead.loanAmount.$valid,'has-error': lead.loanAmount.$invalid && !lead.loanAmount.$pristine}">
-              <option value="" selected>Select Student Loan Debt Amount</option>
+              <option value="" selected>Select Loan Debt Amount</option>
               <option value="7500">Below $10,000</option>
               <option value="15000">$10,000 - $19,000</option>
               <option value="25000">$20,000 - $29,000</option>
