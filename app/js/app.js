@@ -7,7 +7,7 @@ angular.module('landingPage', [])
     .run(function ($window, FacebookConversion) {
 
         var urlParams = getQueryStringObject();
-        var sessionId = window.sessionStorage.getItem('mp_id') || guid();
+        var sessionId = window.localStorage.getItem('mp_id') || guid();
         mixpanel.identify(sessionId);
 
         FacebookConversion.track('6013014078943');
@@ -27,7 +27,7 @@ angular.module('landingPage', [])
 
         mixpanel.track('Site loaded', siteLoadHash);
 
-        window.sessionStorage.setItem('mp_id', sessionId);
+        window.localStorage.setItem('mp_id', sessionId);
 
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
@@ -127,7 +127,7 @@ angular.module('landingPage')
             }
 
             mixpanel.alias($scope.phone);
-            window.sessionStorage.setItem('mp_id', $scope.phone);
+            window.localStorage.setItem('mp_id', $scope.phone);
 
             var formDetails = {
                 name: $scope.name,
@@ -142,10 +142,11 @@ angular.module('landingPage')
             FacebookConversion.track('6013014109543', '4.00');
 
             var result = $http.post(settings.apiUrl + '/lead', formDetails);
+            $scope.submitting = true;
 
             result.success(function () {
                 setTimeout(function () {
-                    // window.location.href = 'thank-you.html'
+                    window.location.href = 'thank-you.html'
                 }, 100)
             });
 
@@ -225,8 +226,8 @@ angular.module('landingPage')
 
         };
 
-        $scope.goToLeadForm = function() {
-            window.location.href='index.html#leadForm'
+        $scope.goToLeadForm = function () {
+            window.location.href = 'index.html#leadForm'
         }
 
     })
