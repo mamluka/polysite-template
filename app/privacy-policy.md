@@ -6,6 +6,7 @@ image:
   feature: 1.jpg
 comments: true
 mathjax:
+facebook_pixel: 6013015045743
 ---
 
 This Privacy Policy governs the manner in which Federal Student Loan Reduction Center collects, uses, maintains and discloses information collected from users (each, a "User") of the Federal Student Loan Reduction Center website ("Site"). This privacy policy applies to the Site and all products and services offered by Federal Student Loan Reduction Center.

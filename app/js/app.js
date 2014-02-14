@@ -4,21 +4,28 @@ angular.module('landingPage', [])
     .config(function () {
 
     })
-    .run(function ($window) {
+    .run(function ($window, FacebookConversion) {
 
         var urlParams = getQueryStringObject();
         var sessionId = window.sessionStorage.getItem('mp_id') || guid();
         mixpanel.identify(sessionId);
 
+        FacebookConversion.track('6013014078943');
+        var siteLoadHash = {};
+
         if (urlParams.cp) {
             mixpanel.people.set('campaign', urlParams.cp);
             mixpanel.register({ campaign: urlParams.cp});
+            siteLoadHash.campaign = urlParams.cp;
         }
 
         if (urlParams.v) {
             mixpanel.people.set('ad_version', urlParams.v);
             mixpanel.register({ ad_version: urlParams.v});
+            siteLoadHash.ad_version = urlParams.v;
         }
+
+        mixpanel.track('Site loaded', siteLoadHash);
 
         window.sessionStorage.setItem('mp_id', sessionId);
 
@@ -108,13 +115,13 @@ angular.module('landingPage', [])
     });
 
 angular.module('landingPage')
-    .controller('FormCtrl', function ($scope, $http) {
+    .controller('FormCtrl', function ($scope, $http, FacebookConversion) {
         $scope.submit = function () {
             if ($scope.lead.$invalid) {
                 mixpanel.track('Invalid submission');
 
                 validate();
-                if (!angular.element(document.getElementsByTagName('html')[0]).hasClass('touch'))
+                if (angular.element(document.getElementsByTagName('html')[0]).hasClass('touch'))
                     showValidationMessage();
                 return;
             }
@@ -130,14 +137,16 @@ angular.module('landingPage')
                 loanAmount: $scope.loanAmount,
                 domain: settings.domain
             };
+
+            mixpanel.track('Form submitted', formDetails);
+            FacebookConversion.track('6013014109543', '4.00');
+
             var result = $http.post(settings.apiUrl + '/lead', formDetails);
 
             result.success(function () {
-                mixpanel.track('Form submitted', formDetails);
-
                 setTimeout(function () {
-                    window.location.href = 'thank-you.html'
-                }, 300)
+                    // window.location.href = 'thank-you.html'
+                }, 100)
             });
 
             function validate() {
@@ -173,7 +182,8 @@ angular.module('landingPage')
             }
         }
     })
-    .controller('ClickToCallCtrl', function ($scope) {
+    .controller('ClickToCallCtrl', function ($scope, FacebookConversion) {
+
 
         $scope.desktop = false;
 
@@ -207,12 +217,21 @@ angular.module('landingPage')
         }
 
         $scope.triggerCall = function (phone) {
+            FacebookConversion.track('6013014157743');
+
             setTimeout(function () {
                 window.location = 'tel:' + phone;
             }, 250);
 
         };
 
+    })
+    .service('FacebookConversion', function () {
+        this.track = function (pixelId, value) {
+            value = value || '0.00';
+            var trackingImage = new Image();
+            trackingImage.src = "https://www.facebook.com/offsite_event.php?id=" + pixelId + "&value=" + value + "&currency=USD";
+        }
     })
     .directive('mixpanelTrackLink', function () {
         return function (scope, element, attrs) {
@@ -228,6 +247,13 @@ angular.module('landingPage')
         return function (scope, element, attrs) {
             element.on('click', function () {
                 mixpanel.track(attrs.mixpanelClick)
+            });
+        }
+    })
+    .directive('facebookPixel', function (FacebookConversion) {
+        return function (scope, element, attrs) {
+            element.on('click', function () {
+                FacebookConversion.track(attrs.facebookPixel);
             });
         }
     })
