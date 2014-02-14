@@ -886,5 +886,8 @@ h6.lighter {
 }
 
 .navbar {
-  opacity: 0.8;
+  opacity: 0.95;
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 5px 1px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 5px 1px rgba(50, 50, 50, 0.75);
 }
