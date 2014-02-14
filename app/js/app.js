@@ -6,13 +6,90 @@ angular.module('landingPage', [])
     })
     .run(function () {
 
+        var sessionId = window.sessionStorage.getItem('mp_id') || guid();
+
+        mixpanel.identify(sessionId);
+
+        window.sessionStorage.setItem('mp_id', sessionId);
+
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+
+        function guid() {
+            return s4() + s4()
+        }
     });
 
 angular.module('landingPage')
     .controller('FormCtrl', function ($scope, $http) {
         $scope.submit = function () {
-            $http.post()
+            if ($scope.lead.$invalid) {
+                mixpanel.track('Invalid submission');
+
+                validate();
+                if (angular.element(document.getElementsByTagName('html')[0]).hasClass('touch'))
+                    showValidationMessage();
+                return;
+            }
+
+            mixpanel.alias($scope.phone);
+            window.sessionStorage.setItem('mp_id', $scope.phone);
+
+            var formDetails = {
+                name: $scope.name,
+                zip: $scope.zip,
+                phone: $scope.phone,
+                loadType: $scope.loanType,
+                loanAmount: $scope.loanAmount,
+                domain: settings.domain
+            };
+            var result = $http.post(settings.apiUrl + '/lead', formDetails);
+
+            result.success(function () {
+                mixpanel.track('Form submitted', formDetails);
+
+                setTimeout(function () {
+                    window.location.href = 'thank-you.html'
+                }, 300)
+            });
+
+            function validate() {
+                var form = $scope.lead;
+                for (var field in  form) {
+                    if (field[0] != '$' && form[field].$pristine) {
+                        form[field].$setViewValue(
+                            form[field].$modelValue
+                        );
+                    }
+                }
+            }
+
+            function showValidationMessage() {
+                var validationMessages = [];
+
+                if ($scope.lead.name.$invalid)
+                    validationMessages.push('* Name is required.');
+
+                if ($scope.lead.zip.$invalid)
+                    validationMessages.push('* Zip is required.');
+
+                if ($scope.lead.phone.$invalid)
+                    validationMessages.push('* Phone is required.');
+
+                if ($scope.lead.loanType.$invalid)
+                    validationMessages.push('* Loan type is required.');
+
+                if ($scope.lead.loanAmount.$invalid)
+                    validationMessages.push('* Loan amount is required.');
+
+                alert('You are missing\n' + validationMessages.join('\n'));
+            }
         }
+
+
     })
     .controller('ClickToCallCtrl', function ($scope) {
 
@@ -47,56 +124,56 @@ angular.module('landingPage')
             $scope.desktop = true;
         }
 
-    })
-    .directive('scrollPosition', ['$window', '$timeout', '$parse', function ($window, $timeout, $parse) {
-        return function (scope, element, attrs) {
+        $scope.triggerCall = function (phone) {
+            setTimeout(function () {
+                window.location.href = 'tel:' + phone;
+            }, 250);
 
-            var windowEl = angular.element($window)[0];
-            var directionMap = {
-                "up": 1,
-                "down": -1,
-                "left": 1,
-                "right": -1
-            };
-
-            // We retrieve the element with the scroll
-            scope.element = angular.element(element)[0];
-
-            // We store all the elements that listen to this event
-            windowEl._elementsList = $window._elementsList || [];
-            windowEl._elementsList.push({element: scope.element, scope: scope, attrs: attrs});
-
-            var element, direction, index, model, scrollAnimationFunction, tmpYOffset = 0, tmpXOffset = 0;
-            var userViewportOffset = 200;
-
-            function triggerScrollFunctions() {
-
-                for (var i = windowEl._elementsList.length - 1; i >= 0; i--) {
-                    element = windowEl._elementsList[i].element;
-                    if (!element.firedAnimation) {
-                        var directionY = tmpYOffset - windowEl.pageYOffset > 0 ? "up" : "down";
-                        var directionX = tmpXOffset - windowEl.pageXOffset > 0 ? "left" : "right";
-                        tmpXOffset = windowEl.pageXOffset;
-                        tmpYOffset = windowEl.pageYOffset;
-                        if (element.offsetTop - userViewportOffset < windowEl.pageYOffset && element.offsetHeight > (windowEl.pageYOffset - element.offsetTop)) {
-                            model = $parse(windowEl._elementsList[i].attrs.scrollAnimation)
-                            scrollAnimationFunction = model(windowEl._elementsList[i].scope)
-                            windowEl._elementsList[i].scope.$apply(function () {
-                                element.firedAnimation = scrollAnimationFunction(directionMap[directionX]);
-                            })
-                            if (element.firedAnimation) {
-                                windowEl._elementsList.splice(i, 1);
-                            }
-                        }
-                    } else {
-                        index = windowEl._elementsList.indexOf(element); //TODO: Add indexOf polyfill for IE9
-                        if (index > 0) windowEl._elementsList.splice(index, 1);
-                    }
-                }
-
-            }
-
-            windowEl.onscroll = triggerScrollFunctions;
         };
-    }]);
+
+    })
+    .directive('mixpanelTrackLink', function () {
+        return function (scope, element, attrs) {
+            element.on('click', function () {
+                mixpanel.track('Link clicked', {
+                    scope: attrs.name,
+                    text: element.text() || 'Empty'
+                })
+            });
+        }
+    })
+    .directive('mixpanelClick', function () {
+        return function (scope, element, attrs) {
+            element.on('click', function () {
+                mixpanel.track(attrs.mixpanelClick)
+            });
+        }
+    })
+    .directive('mixpanelInput', function () {
+        return function (scope, element, attrs) {
+            element.on('focus', function () {
+                mixpanel.track('Focus', {
+                    name: attrs.name,
+                    value: attrs.value
+                })
+            });
+
+            element.on('blur', function () {
+                mixpanel.track('Blur', {
+                    name: attrs.name,
+                    value: attrs.value
+                })
+            });
+        }
+    })
+    .directive('mixpanelSelect', function () {
+        return function (scope, element, attrs) {
+            element.on('change', function () {
+                mixpanel.track('Selected', {
+                    name: attrs.name,
+                    value: element.val()
+                })
+            });
+        }
+    });
 

@@ -159,17 +159,17 @@ module.exports = function (grunt) {
         jekyll: {
             options: {
                 bundleExec: true,
-                config: '_config.yml,_config.build.yml',
+                config: '_config.yml,_config.build.yml,_config.override.yml',
                 src: '<%= yeoman.app %>'
             },
             dist: {
                 options: {
-                    dest: '<%= yeoman.dist %>',
+                    dest: '<%= yeoman.dist %>'
                 }
             },
             server: {
                 options: {
-                    config: '_config.yml',
+                    config: '_config.yml,_config.override.yml',
                     dest: '.jekyll'
                 }
             },
@@ -199,7 +199,7 @@ module.exports = function (grunt) {
         },
         usemin: {
             options: {
-                assetsDirs: '<%= yeoman.dist %>',
+                assetsDirs: '<%= yeoman.dist %>'
             },
             html: ['<%= yeoman.dist %>/**/*.html'],
             css: ['<%= yeoman.dist %>/css/**/*.css']

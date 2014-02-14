@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-7 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.name.$valid,'has-error': lead.name.$invalid && !lead.name.$pristine}">
-            <input class="form-control input-lg" type="text" placeholder="Name" ng-model="name" required name="name">
+            <input mixpanel-input class="form-control input-lg" type="text" placeholder="Name" ng-model="name" required name="name">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.name.$pristine" ng-class="{'fa-check': lead.name.$valid, 'fa-minus': lead.name.$invalid && !lead.name.$pristine }"></span>
           </div>
         </div>
@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-4 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
-            <input class="form-control input-lg" type="text" placeholder="Zip" ng-model="zip" required ng-pattern="/^\d{5}$/" name="zip" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="text" placeholder="Zip" ng-model="zip" required ng-pattern="/^\d{5}$/" name="zip" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.zip.$pristine" ng-class="{'fa-check': lead.zip.$valid, 'fa-minus': lead.zip.$invalid && !lead.zip.$pristine }"></span>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
-            <input class="form-control input-lg" type="text" placeholder="Phone" ng-model="phone" required name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="text" placeholder="Phone" ng-model="phone" required name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.phone.$pristine" ng-class="{'fa-check': lead.phone.$valid, 'fa-minus': lead.phone.$invalid && !lead.phone.$pristine }"></span>
           </div>
         </div>
@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="has-feedback form-group">
-            <select class="form-control" required name="loanType" ng-class="{'has-success': lead.loanType.$valid,'has-error': lead.loanType.$invalid && !lead.loanType.$pristine}" ng-model="loanType">
+            <select mixpanel-select class="form-control" required name="loanType" ng-class="{'has-success': lead.loanType.$valid,'has-error': lead.loanType.$invalid && !lead.loanType.$pristine}" ng-model="loanType">
               <option value="" selected>Type of Student Loans</option>
               <option value="Federal">Federal</option>
               <option value="Private">Private</option>
@@ -42,7 +42,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="has-feedback form-group">
-            <select class="form-control" ng-model="loanAmount" required name="loadAmount" ng-class="{'has-success': lead.loadAmount.$valid,'has-error': lead.loadAmount.$invalid && !lead.loadAmount.$pristine}">
+            <select mixpanel-select class="form-control" ng-model="loanAmount" required name="loadAmount" ng-class="{'has-success': lead.loadAmount.$valid,'has-error': lead.loadAmount.$invalid && !lead.loadAmount.$pristine}">
               <option value="" selected>Select Student Loan Debt Amount</option>
               <option value="7500">Below $10,000</option>
               <option value="15000">$10,000 - $19,000</option>

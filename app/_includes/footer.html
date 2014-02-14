@@ -14,14 +14,14 @@
         {% endif %}
         {% if site.owner.twitter %}
         <li>
-          <a href="http://twitter.com/{{ site.owner.twitter }}" data-toggle="tooltip" title="{{ site.owner.name}} on Twitter" target="_blank">
+          <a mixpanel-track-link scope="twitter" href="http://twitter.com/{{ site.owner.twitter }}" data-toggle="tooltip" title="{{ site.owner.name}} on Twitter" target="_blank">
             <i class="fa fa-twitter"></i>
           </a>
         </li>
         {% endif %}
         {% if site.owner.facebook %}
         <li>
-          <a href="http://facebook.com/{{ site.owner.facebook }}" data-toggle="tooltip" title="{{ site.owner.name}} on Facebook" target="_blank">
+          <a mixpanel-track-link scope="facebook" href="http://facebook.com/{{ site.owner.facebook }}" data-toggle="tooltip" title="{{ site.owner.name}} on Facebook" target="_blank">
             <i class="fa fa-facebook"></i>
           </a>
         </li>

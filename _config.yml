@@ -14,8 +14,8 @@ owner:
   email:          sales@relief.com
   description:    We are helping many people unshackle themselves from Student Loan Debt. In less than 5 minutes we can QUALIFY you for one of the many Student Loan FORGIVENESS programs or a Student Loan CONSOLIDATION program.<br> FREE YOURSELF OF THIS MOUNTAIN OF DEBT! <br>CALL NOW – 866-730-2071
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        strelief
-  facebook:       strelief
+  twitter:        StudentLoanPro1
+  facebook:       pages/Student-Loan-Forgiveness/285731948243932
   github:
   stackexchange:
   linkedin:       
@@ -27,10 +27,11 @@ owner:
   google_plus:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:      
+google_analytics: UA-48083015-1
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
+mixpanel: 19101e50f654de658b55f3c1241cc552
 
 # Links to include in top navigation
 # For external links add external: true
