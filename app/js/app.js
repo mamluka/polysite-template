@@ -133,7 +133,7 @@ angular.module('landingPage')
                 name: $scope.name,
                 zip: $scope.zip,
                 phone: $scope.phone,
-                loadType: $scope.loanType,
+                loanType: $scope.loanType,
                 loanAmount: $scope.loanAmount,
                 domain: settings.domain
             };
