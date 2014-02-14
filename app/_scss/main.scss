@@ -293,6 +293,28 @@ hr {
   font-style: italic;
 }
 
+@media (max-width: 1024px) {
+  .blog-header,
+  .post-header {
+    background-attachment: scroll;
+  }
+  .hyper {
+    font-size: 60px;
+  }
+  #footer {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 992px) {
+  .post-title {
+    margin-bottom: 30px;
+  }
+  .post-info {
+    margin-bottom: 0;
+  }
+}
+
 /* Responsive typography */
 @media (max-width: 767px) {
   h1 {
@@ -540,16 +562,6 @@ html {
   margin-top: 24px;
 }
 
-@media (max-width: 1024px) {
-  .blog-header,
-  .post-header {
-    background-attachment: scroll;
-  }
-  .hyper {
-    font-size: 60px;
-  }
-}
-
 /* ----------- */
 /* POST STYLES */
 /* ----------- */
@@ -642,15 +654,6 @@ html {
   left: 0;
 }
 
-@media (min-width: 992px) {
-  .post-title {
-    margin-bottom: 30px;
-  }
-  .post-info {
-    margin-bottom: 0;
-  }
-}
-
 /* ------ */
 /* FOOTER */
 /* ------ */
@@ -681,12 +684,6 @@ html {
 #footer .container {
   position: relative;
   z-index: 2;
-}
-
-@media (max-width: 1024px) {
-  #footer {
-    background-attachment: scroll;
-  }
 }
 
 /* ---------------- */

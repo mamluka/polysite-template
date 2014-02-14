@@ -182,7 +182,7 @@ angular.module('landingPage')
 
         $scope.triggerCall = function (phone) {
             setTimeout(function () {
-                window.location.href = 'tel:' + phone;
+                window.location = 'tel:' + phone;
             }, 250);
 
         };
