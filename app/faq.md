@@ -8,6 +8,7 @@ image:
 comments: true
 mathjax:
 facebook_pixel: 6013015042343
+nav_bar: true
 ---
 
 ## What does it mean to default on a student loan?

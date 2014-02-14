@@ -8,6 +8,7 @@ image:
 comments: true
 mathjax:
 facebook_pixel: 6013015044143
+nav_bar: true
 ---
 
 You must repay your loans even if you don’t complete your education, can’t find a job related to your program of study, or are unhappy with the education you paid for with your loan.  However, certain circumstances might lead to your loans being forgiven, canceled, or discharged.

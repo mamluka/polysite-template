@@ -8,6 +8,7 @@ image:
 comments: true
 mathjax:
 facebook_pixel: 6013015045143
+nav_bar: true
 ---
 
 ## Direct Loan Consolidation

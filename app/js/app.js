@@ -225,6 +225,10 @@ angular.module('landingPage')
 
         };
 
+        $scope.goToLeadForm = function() {
+            window.location.href='index.html#leadForm'
+        }
+
     })
     .service('FacebookConversion', function () {
         this.track = function (pixelId, value) {
