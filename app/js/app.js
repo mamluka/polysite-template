@@ -6,8 +6,19 @@ angular.module('landingPage', [])
     })
     .run(function ($window) {
 
+        var urlParams = getQueryStringObject();
         var sessionId = window.sessionStorage.getItem('mp_id') || guid();
         mixpanel.identify(sessionId);
+
+        if (urlParams.cp) {
+            mixpanel.people.set('campaign', urlParams.cp);
+            mixpanel.register({ campaign: urlParams.cp});
+        }
+
+        if (urlParams.v) {
+            mixpanel.people.set('ad_version', urlParams.v);
+            mixpanel.register({ ad_version: urlParams.v});
+        }
 
         window.sessionStorage.setItem('mp_id', sessionId);
 
@@ -77,6 +88,23 @@ angular.module('landingPage', [])
         }
 
         bindScroll();
+
+        function getQueryStringObject() {
+            var match,
+                pl = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) {
+                    return decodeURIComponent(s.replace(pl, " "));
+                },
+                query = window.location.search.substring(1);
+
+            urlParams = {};
+            while (match = search.exec(query))
+                urlParams[decode(match[1])] = decode(match[2]);
+
+            return urlParams
+        }
+
     });
 
 angular.module('landingPage')
@@ -144,8 +172,6 @@ angular.module('landingPage')
                 alert('You are missing\n' + validationMessages.join('\n'));
             }
         }
-
-
     })
     .controller('ClickToCallCtrl', function ($scope) {
 
@@ -208,17 +234,25 @@ angular.module('landingPage')
     .directive('mixpanelInput', function () {
         return function (scope, element, attrs) {
             element.on('focus', function () {
-                mixpanel.track('Focus', {
-                    name: attrs.name,
-                    value: attrs.value
-                })
+                var hash = {
+                    name: attrs.name
+                };
+
+                if (element.val())
+                    hash.value = element.val();
+
+                mixpanel.track('Focus', hash)
             });
 
             element.on('blur', function () {
-                mixpanel.track('Blur', {
-                    name: attrs.name,
-                    value: attrs.value
-                })
+                var hash = {
+                    name: attrs.name
+                };
+
+                if (element.val())
+                    hash.value = element.val();
+
+                mixpanel.track('Blur', hash)
             });
         }
     })

@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-4 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
-            <input mixpanel-input class="form-control input-lg" type="text" placeholder="Zip" ng-model="zip" required ng-pattern="/^\d{5}$/" name="zip" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="number" placeholder="Zip" ng-model="zip" required ng-pattern="/^\d{5}$/" name="zip" ng-class="{'has-success': lead.zip.$valid,'has-error': lead.zip.$invalid && !lead.zip.$pristine}">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.zip.$pristine" ng-class="{'fa-check': lead.zip.$valid, 'fa-minus': lead.zip.$invalid && !lead.zip.$pristine }"></span>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="has-feedback form-group" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
-            <input mixpanel-input class="form-control input-lg" type="text" placeholder="Phone" ng-model="phone" required name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="tel" placeholder="Phone" ng-model="phone" required name="phone" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
             <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.phone.$pristine" ng-class="{'fa-check': lead.phone.$valid, 'fa-minus': lead.phone.$invalid && !lead.phone.$pristine }"></span>
           </div>
         </div>
