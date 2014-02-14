@@ -4,10 +4,9 @@ angular.module('landingPage', [])
     .config(function () {
 
     })
-    .run(function () {
+    .run(function ($window) {
 
         var sessionId = window.sessionStorage.getItem('mp_id') || guid();
-
         mixpanel.identify(sessionId);
 
         window.sessionStorage.setItem('mp_id', sessionId);
@@ -21,6 +20,63 @@ angular.module('landingPage', [])
         function guid() {
             return s4() + s4()
         }
+
+        var interval,
+            handler,
+            el = document.getElementsByTagName('body')[0],
+            scrollEvent = 'scroll',
+            scrollPosition = {
+                x: 0,
+                y: 0
+            };
+
+        var bindScroll = function () {
+            handler = function (event) {
+                scrollPosition.x = el.scrollLeft;
+                scrollPosition.y = el.scrollTop;
+
+                startInterval(event);
+                unbindScroll();
+                scrollTrigger(event, false);
+            };
+
+            angular.element($window).bind(scrollEvent, handler);
+        };
+
+        var startInterval = function (event) {
+            interval = $window.setInterval(function () {
+                if (scrollPosition.x == el.scrollLeft && scrollPosition.y == el.scrollTop) {
+                    $window.clearInterval(interval);
+                    bindScroll();
+                    scrollTrigger(event, true);
+                } else {
+                    scrollPosition.x = el.scrollLeft;
+                    scrollPosition.y = el.scrollTop;
+                }
+            }, 150);
+        };
+
+        var unbindScroll = function () {
+            // be nice to others, don't unbind their scroll handlers
+            angular.element($window).unbind(scrollEvent, handler);
+        };
+
+        var currentPage = calculatePage(window.scrollY);
+
+        var scrollTrigger = function (event, isEndEvent) {
+            var newPage = calculatePage(scrollPosition.y);
+            if (isEndEvent && newPage != currentPage)
+                mixpanel.track('Scrolled To', {
+                    page: newPage,
+                    screenHeight: document.documentElement.clientHeight
+                });
+        };
+
+        function calculatePage(scrollY) {
+            return Math.ceil(scrollY / document.documentElement.clientHeight);
+        }
+
+        bindScroll();
     });
 
 angular.module('landingPage')
