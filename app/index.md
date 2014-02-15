@@ -2,6 +2,7 @@
 layout: default
 type: status
 title: Shackled by student debt?
+no_header: true
 image:
   feature: 1.jpg
   feature_small: 1_small.jpg
