@@ -1,3 +1,14 @@
+{% if page.nav_bar %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="ClickToCallCtrl">
+  <div class="container">
+    <a href="/" class="btn navbar-btn btn-default col-md-1 col-sm-1"><i class="fa fa-home"></i></a>
+    <button mixpanel-click="Navbar mobile click to call clicked" type="button" class="btn btn-success navbar-btn col-md-4 col-xs-offset-1" ng-click="triggerCall('8557302071')"><i class="fa fa-phone"></i><span class="hidden-xs">Call us - Toll free</span></button>
+    <button mixpanel-click="Navbar go to form clicked" type="button" class="btn btn-primary navbar-btn col-md-4 col-xs-offset-1" ng-click="goToLeadForm()"><i class="fa fa-pencil"></i> <span class="hidden-xs">Let us contact you</span></button>
+  </div>
+</nav>
+{% endif %}
+
+{% unless page.no_header %}
 {% if page.image.feature %}
 <style>
 
@@ -17,15 +28,7 @@
     }
   }
 </style>
-{% if page.nav_bar %}
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="ClickToCallCtrl">
-  <div class="container">
-    <a href="/" class="btn navbar-btn btn-default col-md-1 col-sm-1"><i class="fa fa-home"></i></a>
-    <button mixpanel-click="Navbar mobile click to call clicked" type="button" class="btn btn-success navbar-btn col-md-4 col-xs-offset-1" ng-click="triggerCall('8557302071')"><i class="fa fa-phone"></i><span class="hidden-xs">Call us - Toll free</span></button>
-    <button mixpanel-click="Navbar go to form clicked" type="button" class="btn btn-primary navbar-btn col-md-4 col-xs-offset-1" ng-click="goToLeadForm()"><i class="fa fa-pencil"></i> <span class="hidden-xs">Let us contact you</span></button>
-  </div>
-</nav>
-{% endif %}
+
 <header class="blog-header header-white header-overlay align-center align-middle" itemscope itemtype="http://schema.org/Organization">
   {% else %}
   <header class="blog-header header-white header-overlay align-center align-middle" style="background-image: url('{{site.url}}img/{{ site.default_bg }}')" itemscope itemtype="http://schema.org/Organization">
@@ -96,3 +99,5 @@
       }
     }, 1500);
   </script>
+
+  {% endunless %}
