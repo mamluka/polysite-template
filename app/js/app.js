@@ -25,6 +25,14 @@ angular.module('landingPage', [])
             siteLoadHash.ad_version = urlParams.v;
         }
 
+        if (urlParams.cid) {
+            mixpanel.people.set('campaign_id', urlParams.cid);
+            mixpanel.register({ campaign_id: urlParams.cid});
+            siteLoadHash.campaign_id = urlParams.cid;
+        }
+
+
+
         mixpanel.track('Site loaded', siteLoadHash);
 
         window.localStorage.setItem('mp_id', sessionId);

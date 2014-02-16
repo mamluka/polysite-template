@@ -1,7 +1,7 @@
 ---
 layout: default
 type: status
-title: Shackled by student debt?
+title: <strong>CALL NOW</strong><br>QUALIFIED PROFESSIONALS WAITING TO HELP.
 no_header: true
 image:
   feature: 1.jpg
@@ -12,8 +12,7 @@ mathjax:
 
 {% include lead-collection.html %}
 
-
-## Solve Your Student Loan Issues Now!
+# Solve Your Student Loan Issues Now!
 
 * Lower Your Student Loan Payments Today!
 
@@ -33,7 +32,7 @@ mathjax:
 
 * 100% MONEY BACK GUARANTEE!
 
-## OBAMA STUDENT LOAN FORGIVENESS PROGRAM
+# OBAMA STUDENT LOAN FORGIVENESS PROGRAM
 
 “Let's tell another one million students that when they graduate, they will be required to pay only 10 percent of their income on student loans, and all of their debt will be forgiven after 20 years –- and forgiven after 10 years if they choose a career in public service, because in the United States of America, no one should go broke because they chose to go to college.”
 
