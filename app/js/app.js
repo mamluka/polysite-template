@@ -32,7 +32,6 @@ angular.module('landingPage', [])
         }
 
 
-
         mixpanel.track('Site loaded', siteLoadHash);
 
         window.localStorage.setItem('mp_id', sessionId);
@@ -226,7 +225,7 @@ angular.module('landingPage')
         }
 
         $scope.triggerCall = function (phone) {
-            FacebookConversion.track('6013014157743');
+            FacebookConversion.track('6013014157743', '11.00');
 
             setTimeout(function () {
                 window.location = 'tel:' + phone;
@@ -266,7 +265,7 @@ angular.module('landingPage')
     .directive('facebookPixel', function (FacebookConversion) {
         return function (scope, element, attrs) {
             element.on('click', function () {
-                FacebookConversion.track(attrs.facebookPixel);
+                FacebookConversion.track(attrs.facebookPixel, '3.00');
             });
         }
     })
