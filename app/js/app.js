@@ -90,11 +90,15 @@ angular.module('landingPage', [])
 
         var scrollTrigger = function (event, isEndEvent) {
             var newPage = calculatePage(scrollPosition.y);
-            if (isEndEvent && newPage != currentPage)
+            if (isEndEvent && newPage != currentPage) {
+                console.log('Scrolled to page: ' + newPage);
                 mixpanel.track('Scrolled To', {
                     page: newPage,
                     screenHeight: document.documentElement.clientHeight
                 });
+
+                currentPage = newPage;
+            }
         };
 
         function calculatePage(scrollY) {
