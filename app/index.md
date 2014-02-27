@@ -1,12 +1,11 @@
 ---
 layout: default
 type: status
-title: <strong>CALL NOW</strong><br>QUALIFIED PROFESSIONALS WAITING TO HELP.
+title: <strong>CALL NOW</strong><br>855-730-2071
 html_title: Student Loan Forgiveness call now qualified professionals waiting to help.
-no_header: true
 image:
-  feature: 1.jpg
-  feature_small: 1_small.jpg
+  feature: 2.jpg
+  feature_small: 2_small.jpg
 comments: true
 mathjax:
 ---

@@ -442,9 +442,9 @@ a:hover {
   background: black;
 }
 
-.header-black.header-overlay:after {
-  background: rgba(255, 255, 255, 0.6);
-}
+//.header-black.header-overlay:after {
+//  background: rgba(255, 255, 255, 0.6);
+//}
 
 .header-white .blog-title,
 .header-white .blog-description {
@@ -457,9 +457,9 @@ a:hover {
   background: white;
 }
 
-.header-white.header-overlay:after {
-  background: rgba(0, 0, 0, 0.6);
-}
+//.header-white.header-overlay:after {
+//  background: rgba(0, 0, 0, 0.6);
+//}
 
 .post-info {
   color: #597369;
