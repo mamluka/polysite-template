@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<title>{% if page.html_title %}{{ page.html_title }} &#8211; {% endif %}{{ site.title }}</title>
+<title>{% if page.html_title %}{{ page.html_title }} {% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 {% if page.tags %}
 <meta name="keywords" content="{{ page.tags | join: ', ' }}">
@@ -17,24 +17,6 @@
 <meta name="twitter:title" content="{% if page.html_title %}{{ page.html_title }}{% else %}{{ site.title }}{% endif %}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
-{% endif %}
-
-{% if page.facebook_pixel %}
-<!-- Facebook Conversion Code for Thank you page -->
-<script type="text/javascript">
-  var fb_param = {};
-  fb_param.pixel_id = '{{ page.facebook_pixel}}';
-  fb_param.value = '0.00';
-  fb_param.currency = 'USD';
-  (function () {
-    var fpw = document.createElement('script');
-    fpw.async = true;
-    fpw.src = '//connect.facebook.net/en_US/fp.js';
-    var ref = document.getElementsByTagName('script')[0];
-    ref.parentNode.insertBefore(fpw, ref);
-  })();
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id={{ page.facebook_pixel}}&amp;value=0&amp;currency=USD"/></noscript>
 {% endif %}
 
 <!-- Open Graph -->

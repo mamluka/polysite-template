@@ -176,21 +176,6 @@ input[type=number]::-webkit-outer-spin-button {
   min-width: 180px;
 }
 
-.fancy-select:after {
-  display: block;
-  position: absolute;
-  content: "\f107";
-  font-family: 'FontAwesome';
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-  text-align: center;
-  z-index: 1;
-  top: 50%;
-  right: 0.5em;
-  margin-top: -0.5em;
-}
-
 /* - Figures - */
 figure {
   margin: 0 0 24px;

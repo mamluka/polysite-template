@@ -10,6 +10,8 @@
 
 {% unless page.no_header %}
 {% if page.image.feature %}
+{% capture image %}{{site.base_path}}/img/{{ page.image.feature }}{% endcapture %}
+{% capture image_small %}{{site.base_path}}/img/{{ page.image.feature_small }}{% endcapture %}
 <style>
 
   .blog-header.header-white {
@@ -18,13 +20,7 @@
 
   @media (max-width: 640px) {
     .blog-header.header-white {
-      background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
-    }
-  }
-
-  @media (max-width: 330px) {
-    .blog-header.header-white {
-      background-image: url('{{site.url}}/img/{{ page.image.feature_small }}');
+      background-image: url('{{  image_small | base64 }}');
     }
   }
 </style>
@@ -80,24 +76,24 @@
 
     header[0].style.height = headerHeight + 'px';
 
-    setTimeout(function () {
-      if (window.scrollY < headerHeight * 0.25 && screenWidth > 640) {
-        var moveLocation = 0;
-        var interval = setInterval(function () {
-          if (window.scrollY < moveLocation) {
-            clearInterval(interval);
-            return;
-          }
-          if (moveLocation > 0.75 * headerHeight) {
-            clearInterval(interval);
-            return;
-          }
-
-          moveLocation += 10;
-          window.scrollTo(0, moveLocation);
-        }, 10)
-      }
-    }, 1500);
+    //    setTimeout(function () {
+    //      if (window.scrollY < headerHeight * 0.25 && screenWidth > 640) {
+    //        var moveLocation = 0;
+    //        var interval = setInterval(function () {
+    //          if (window.scrollY < moveLocation) {
+    //            clearInterval(interval);
+    //            return;
+    //          }
+    //          if (moveLocation > 0.75 * headerHeight) {
+    //            clearInterval(interval);
+    //            return;
+    //          }
+    //
+    //          moveLocation += 10;
+    //          window.scrollTo(0, moveLocation);
+    //        }, 10)
+    //      }
+    //    }, 1500);
   </script>
 
   {% endunless %}

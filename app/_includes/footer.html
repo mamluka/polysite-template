@@ -1,7 +1,7 @@
 {% if page.image.feature %}
-<footer id="footer" class="text-center" style="background-image: url('{{ site.url }}/img/{{ page.image.feature }}')">
+<footer id="footer" class="text-center">
   {% else %}
-  <footer id="footer" class="text-center" style="background-image: url('{{ site.url }}/img/{{ site.default_bg }}')">
+  <footer id="footer" class="text-center">
     {% endif %}
     <div class="container">
       <ul class="social-icons">
@@ -15,14 +15,14 @@
         {% if site.owner.twitter %}
         <li>
           <a mixpanel-track-link scope="twitter" href="http://twitter.com/{{ site.owner.twitter }}" data-toggle="tooltip" title="{{ site.owner.name}} on Twitter" target="_blank">
-            <i class="fa fa-twitter"></i>
+            <i class="icons twitter"></i>
           </a>
         </li>
         {% endif %}
         {% if site.owner.facebook %}
         <li>
           <a mixpanel-track-link scope="facebook" href="http://facebook.com/{{ site.owner.facebook }}" data-toggle="tooltip" title="{{ site.owner.name}} on Facebook" target="_blank">
-            <i class="fa fa-facebook"></i>
+            <i class="icons facebook"></i>
           </a>
         </li>
         {% endif %}
