@@ -4,8 +4,7 @@ disqus_shortname: hmfaysal
 default_bg:       1.jpg
 search:			  false
 #Change url to your domain. Leave localhost:4000 server or blank when working locally.
-url: http://localhost:9000
-base_path: /home/davidmz/dev/education-debt-relief-test-1/app
+
 disclaimer: Federal Student Loan Reduction Center is a private company and does not claim to be affiliated with any Federal, State, or Local Government agencies. The Student Aid Center assists people to obtain Federal Government Student Loan Forgiveness and or Consolidation programs by pre-qualifying, preparing and submitting required documentation on their behalf. People with student loan debt have the legal right to use an attorney or process Federal Student Loan Services documentation on their own behalf.
 
 # Owner/author information
