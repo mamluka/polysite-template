@@ -10,15 +10,21 @@
 
 {% unless page.no_header %}
 {% if page.image.feature %}
-{% capture image %}{{site.base_path}}/img/{{ page.image.feature }}{% endcapture %}
-{% capture image_small %}{{site.base_path}}/img/{{ page.image.feature_small }}{% endcapture %}
+{% capture image %}{{site.url}}/img/{{ page.image.feature }}.jpg{% endcapture %}
+{% capture image_medium %}{{site.url}}/img/{{ page.image.feature }}_medium.jpg{% endcapture %}
+{% capture image_small %}{{site.base_path}}/img/{{ page.image.feature }}_small.jpg{% endcapture %}
 <style>
 
   .blog-header.header-white {
     background-image: url('{{site.url}}/img/{{ page.image.feature }}');
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+    .blog-header.header-white {
+      background-image: url('{{  image_medium }}');
+    }
+  }
+  @media (max-width: 320px) {
     .blog-header.header-white {
       background-image: url('{{  image_small | base64 }}');
     }

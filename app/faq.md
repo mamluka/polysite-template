@@ -3,8 +3,7 @@ layout: default
 type: status
 title: FAQ
 image:
-  feature: 1.jpg
-  feature_small: 1_small.jpg
+  feature: bg
 comments: true
 mathjax:
 facebook_pixel: 6013015042343

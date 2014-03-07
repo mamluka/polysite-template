@@ -3,8 +3,7 @@ layout: default
 type: status
 title: Privacy policy
 image:
-  feature: 2.jpg
-  feature_small: 2_small.jpg
+  feature: bg
 comments: true
 mathjax:
 facebook_pixel: 6013015045743
